@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="page-header">
+    <b>HOME</b>
+    </div>
+  <br>
+  <p>
+    <%= link_to "Add user", new_path, :class => "btn btn-primary" %>
+  </p>
+  <br>
+
+  <div class="table-responsive">
+    <table  class="table table-condensed table-hover">
+      <thead>
+      <tr>
+        <th>S.N.</th>
+        <th>Username</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Created-At</th>
+      </tr>
+      </thead>
+
+      <% @user.each_with_index do |user, i| %>
+
+          <tbody>
+
+          <tr>
+            <td><%= (@page.to_i - 1) *4+i+1 %></td>
+            <td><%= user.username %></td>
+            <td><%= user.first_name %></td>
+            <td><%= user.email %></td>
+            <td><%= user.created_at %> </td>
+           <td> <a data-method="delete" href="<%= home_path(user)%>" data-confirm="Files will be permanently deleted?" data-toggle="tooltip" title="DELETE"><i class="fa fa-trash fa-lg" aria-hidden="true"> </i></a>
+            </td>
+
+          </tr>
+
+          </tbody>
+
+      <% end %>
+
+    </table>
+    <%= will_paginate @user, renderer: BootstrapPagination::Rails %>
+  </div>
+</div>
+<script>
+  $(document).on("ready page:change", function () {
+    $('.a').tooltip();
+  });
+</script>

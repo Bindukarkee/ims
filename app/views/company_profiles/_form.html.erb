@@ -1,0 +1,124 @@
+
+    <div class="container">
+
+      <br>
+      <div class="row">
+        <div class="col-md-offset-2 col-md-6">
+          <div class="well well1">
+
+            <%= form_for @company_profile do |f| %>
+    <form>
+
+        <div class="form-group">
+          <div class="row">
+            <div class="col-sm-3">
+              <label>Name:</label></div>
+            <div class="col-md-8">
+              <%= f.text_field :name, {class: "form-control"} %>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="row">
+            <div class="col-sm-3">
+              <label>Address:</label></div>
+            <div class="col-md-8">
+              <%= f.text_field :address, {class: "form-control"}%>
+            </div>
+          </div>
+        </div>
+
+      <div class="form-group">
+        <div class="row">
+          <div class="col-sm-3">
+            <label>VDC/MUN:</label></div>
+          <div class="col-md-8">
+            <%= f.text_field :vdc_mun, {class: "form-control"}%>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="row">
+          <div class="col-sm-3">
+            <label>Ward No:</label></div>
+          <div class="col-md-8">
+            <%= f.text_field :ward_no, {class: "form-control"}%>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="row">
+          <div class="col-sm-3">
+            <label>Phone No:</label></div>
+          <div class="col-md-8">
+            <%= f.text_field :phone_no, {class: "form-control"}%>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="row">
+          <div class="col-sm-3">
+            <label>VAT PAN No:</label></div>
+          <div class="col-md-8">
+            <%= f.text_field :vat_pan_no, {class: "form-control"}%>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="row">
+          <div class="col-sm-3">
+          <label class="control-label">logo*</label></div>
+        <div class="col-md-6">
+          <%= f.file_field :logo %>
+
+        </div>
+      </div>
+        </div>
+
+
+
+      <div class="form-group">
+        <div class="row">
+          <div class="col-sm-3">
+            <label>District:</label></div>
+          <div class="col-md-8">
+            <%= f.text_field :district, {class: "form-control"}%>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="row">
+          <div class="col-sm-3">
+            <label>Zone:</label></div>
+          <div class="col-md-8">
+            <%= f.text_field :zone, {class: "form-control"}%>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="row">
+          <div class="col-sm-3">
+            <label>Current Fiscal Year:</label></div>
+          <div class="col-md-8">
+            <%= f.collection_select :fiscal_year_id, FiscalYear.all, :id, :name, {prompt:"Select Fiscal Year"}, {class: "form-control"}%>
+          </div>
+        </div>
+      </div>
+
+       <p> <button type="submit" class="btn btn-primary">SAVE</button>
+        </p>
+
+
+    </form>
+<% end %>
+            </div>
+          </div>
+        </div>
+      </div>

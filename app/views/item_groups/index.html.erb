@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="page-header">
+    <b>ITEM GROUPS</b>
+    </div>
+  <br>
+  <p><a href="/item_groups/new" class="btn btn-primary">ADD NEW</a>
+  </p>
+  <div class="table-responsive">
+    <table  class="table table-condensed table-hover">
+
+      <thead>
+      <tr>
+        <th>S.N.</th>
+        <th>Name</th>
+        <th>Parent ID</th>
+        <th>Edit/Delete</th>
+      </tr>
+      </thead>
+
+      <% @item_group.each_with_index do |item_group,i| %>
+
+          <tbody>
+          <tr>
+            <td><%= (@page.to_i - 1) *4+i+1 %></td>
+            <td> <%= item_group.name %></td>
+            <td> <%= item_group.parent_id%></td>
+            <td>
+              <a href="<%= edit_item_group_path(item_group)%>" data-toggle="tooltip" title="EDIT"><i class="fa fa-eye fa-lg" aria-hidden="true"> </i></a>
+              &nbsp <a data-method="delete" href="<%= item_group_path(item_group)%>" data-confirm="Files will be permanently deleted?" data-toggle="tooltip" title="DELETE"><i class="fa fa-trash fa-lg" aria-hidden="true"> </i></a>
+            </td>
+          </tr>
+          </tbody>
+
+      <% end %>
+    </table>
+  </div>
+  <%= will_paginate @item_group, renderer: BootstrapPagination::Rails %>
+</div>

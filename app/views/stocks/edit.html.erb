@@ -1,0 +1,29 @@
+<div class="container">
+
+  <br>
+
+  <ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li><a href="/stocks">Stocks</a></li>
+    <li class="active">Edit</li>
+  </ol>
+
+  <%= render "form" %>
+
+  <% if @stock.errors.any? %>
+      <div class="welle">
+      <h2>
+        <%= pluralize(@stock.errors.count,"error")  %>
+        occured
+      </h2>
+      <ul>
+        <%= @stock.errors.full_messages.each do |e| %>
+            <li> <%= e %>
+            </li>
+        <% end %>
+      </ul>
+        </div>
+  <% end %>
+
+</div>
+

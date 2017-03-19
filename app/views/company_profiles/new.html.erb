@@ -1,0 +1,20 @@
+
+  <% if @company_profile.errors.any? %>
+      <div class="well">
+      <h2>
+        <%= pluralize(@company_profile.errors.count,"error")  %>
+        occured
+      </h2>
+      <ul>
+        <%= @company_profile.errors.full_messages.each do |e| %>
+            <li> <%= e %>
+            </li>
+        <% end %>
+      </ul>
+        </div>
+  <% end %>
+
+  <%= render "form" %>
+
+
+

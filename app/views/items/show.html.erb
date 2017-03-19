@@ -1,0 +1,24 @@
+<div class="container">
+
+  <br>
+    <ol class="breadcrumb">
+      <li><a href="/"> Home </a></li>
+      <li><a href="/items"> Items </a></li>
+      <li class="active"> Show </li>
+    </ol>
+<br>
+  <div class="wells">
+
+    <p> <strong> Name:       </strong> <%= @item.name %> </p>
+    <p> <strong> Unit ID:    </strong> <%= @item.unit_id %> </p>
+    <p> <strong> Item Code:   </strong> <%= @item.item_code %> </p>
+    <p> <strong> Item Group ID: </strong> <%= @item. item_group_id%> </p>
+    <p> <strong> Description: </strong> <%= @item.description %> </p>
+    <p> <strong> Fiscal_Year: </strong> <%= @item.fiscal_year.name %></p>
+
+
+<p>
+  <a href="/items/new" class="btn btn-success">New</a>
+  </p>
+    </div>
+</div>

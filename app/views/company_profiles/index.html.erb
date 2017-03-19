@@ -1,0 +1,43 @@
+<div class="container">
+
+  <div class="page-header">
+   <strong> COMPANY PROFILES</strong>
+    </div>
+  <br>
+
+  <% if @company_profile.count == 0 %>
+
+<div class="wells">
+  <h3>NO ANY RECORDS FOUND!!!</h3>
+      <p>
+      <a href="/company_profiles/new" class="btn btn-success">ADD NEW</a>
+      </p>
+      </div>
+
+  <% else %>
+
+  <div class="wells">
+<% @company_profile.each_with_index do |company_profile| %>
+
+        <div class="logo">
+          <p> <a href="<%= company_profile.logo.url %>" target="_blank">
+            <%= image_tag company_profile.logo.thumb.url, :class => "aa thumbnail" %></a> </p>
+        </div>
+        <p> <strong>Name:</strong>&nbsp     <%= company_profile.name %></p>
+        <p> <strong>Address:</strong> &nbsp <%= company_profile.address%></p>
+        <p> <strong>VDC/MUN:</strong>&nbsp  <%= company_profile.vdc_mun %></p>
+        <p> <strong>Ward No:</strong>&nbsp  <%= company_profile.ward_no %></p>
+        <p> <strong>Phone No:</strong>&nbsp <%= company_profile.phone_no %></p>
+        <p> <strong>Vat PAN No:</strong>&nbsp<%= company_profile.vat_pan_no %></p>
+        <p> <strong>District:</strong>&nbsp <%= company_profile.district %></p>
+        <p> <strong>Zone:</strong>&nbsp     <%= company_profile.zone %></p>
+        <p> <strong>Current Fiscal Year:</strong>&nbsp <%= company_profile.fiscal_year_id %></p>
+
+
+    <a href="<%= edit_company_profile_path(company_profile)%>" data-toggle="tooltip" title="EDIT" class="btn btn-success">EDIT</a>
+
+
+<% end %>
+  </div>
+  <% end %>
+  </div>

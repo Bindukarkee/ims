@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="page-header">
+    <b>FISCAL YEARS</b>
+    </div>
+  <br>
+  <p><a href="/fiscal_years/new" class="btn btn-primary">ADD NEW</a>
+  </p>
+  <div class="table-responsive">
+    <table  class="table table-condensed table-hover">
+
+      <thead>
+      <tr>
+        <th>S.N.</th>
+        <th>Name</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Edit/Delete</th>
+      </tr>
+      </thead>
+
+      <% @fiscal_year.each_with_index do |fiscal_year,i| %>
+
+          <tbody>
+          <tr>
+            <td><%= (@page.to_i - 1) *4+i+1 %></td>
+            <td> <%= fiscal_year.name %></td>
+            <td> <%= fiscal_year.start_date%></td>
+            <td> <%= fiscal_year.end_date %></td>
+            <td>
+              <a href="<%= edit_fiscal_year_path(fiscal_year)%>" data-toggle="tooltip" title="EDIT"><i class="fa fa-eye fa-lg" aria-hidden="true"> </i></a>
+              &nbsp <a data-method="delete" href="<%= fiscal_year_path(fiscal_year)%>" data-confirm="Files will be permanently deleted?" data-toggle="tooltip" title="DELETE"><i class="fa fa-trash fa-lg" aria-hidden="true"> </i></a>
+            </td>
+          </tr>
+          </tbody>
+
+      <% end %>
+    </table>
+  </div>
+  <%= will_paginate @fiscal_year, renderer: BootstrapPagination::Rails %>
+</div>

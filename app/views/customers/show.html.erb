@@ -1,0 +1,21 @@
+<div class="container">
+
+
+  <ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li><a href="/customers">Customers</a></li>
+    <li class="active">Show</li>
+  </ol>
+
+
+  <div class="wells">
+
+    <p> <b> Name: </b> <%= @customer.name %> </p>
+    <p> <b> Address: </b> <%= @customer.address %> </p>
+    <p> <b> Phone No.: </b> <%= @customer.phone_no %> </p>
+    
+<p>
+  <a href="/customers/new" class="btn btn-success"> NEW </a>
+  </p>
+    </div>
+</div>

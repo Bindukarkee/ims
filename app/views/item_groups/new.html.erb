@@ -1,0 +1,29 @@
+<div class="container">
+
+  <br>
+
+  <ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li><a href="/item_groups">Item_Groups</a></li>
+    <li class="active">New</li>
+  </ol>
+
+  <%= render "form" %>
+
+  <% if @item_group.errors.any? %>
+      <div class="welle">
+        <h2>
+          <%= pluralize(@item_group.errors.count,"error")  %>
+          occured
+        </h2>
+        <ul>
+          <%= @item_group.errors.full_messages.each do |e| %>
+              <li> <%= e %>
+              </li>
+          <% end %>
+        </ul>
+      </div>
+  <% end %>
+
+
+</div>

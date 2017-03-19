@@ -1,0 +1,59 @@
+ <div class="container">
+
+      <div class="row">
+        <div class="col-md-offset-2 col-md-6">
+          <div class="well well1">
+
+            <%= form_for @stock do |f| %>
+    <form>
+
+        <div class="form-group">
+          <div class="row">
+            <div class="col-sm-3">
+              <label>Item</label></div>
+            <div class="col-md-8">
+              <%= f.collection_select :item_id, Item.all, :id, :name, {prompt:"Select item"}, {class: "form-control"}%>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="row">
+            <div class="col-sm-3">
+              <label>Quantity</label></div>
+            <div class="col-md-8">
+             <%= f.text_field :quantity, {class: "form-control"} %>
+            </div>
+          </div>
+        </div>
+
+      <div class="form-group">
+        <div class="row">
+          <div class="col-sm-3">
+            <label>Unit Price</label></div>
+          <div class="col-md-8">
+            <%= f.text_field :unit_price, {class: "form-control"}%>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="row">
+          <div class="col-sm-3">
+            <label>Estimated Sell Price</label></div>
+          <div class="col-md-8">
+            <%= f.text_field :est_sell_price, {class: "form-control"}%>
+          </div>
+        </div>
+      </div>
+
+       <p> <button type="submit" class="btn btn-primary">SAVE</button>
+        </p>
+
+
+    </form>
+<% end %>
+            </div>
+          </div>
+        </div>
+      </div>

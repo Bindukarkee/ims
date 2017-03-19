@@ -1,0 +1,22 @@
+<div class="container">
+  <br>
+
+  <ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li><a href="/suppliers">Suppliers</a></li>
+    <li class="active">Show</li>
+  </ol>
+
+  <div class="wells">
+
+    <p> <strong> Name: </strong> <%= @supplier.name %> </p>
+    <p> <strong> Address: </strong> <%= @supplier.address %> </p>
+    <p> <strong> Phone No.: </strong> <%= @supplier.phone_no %> </p>
+    <p> <strong> Email: </strong> <%= @supplier.email %> </p>
+
+<p>
+  <a href="/suppliers/new" class="btn btn-success">New</a>
+  </p>
+
+    </div>
+</div>

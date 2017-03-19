@@ -1,0 +1,39 @@
+<div class="container">
+
+  <div class="page-header">
+    <b>UNITS</b>
+    </div>
+
+  <p><a href="/units/new" class="btn btn-success">ADD NEW</a>
+  </p>
+  <div class="table-responsive">
+    <table  class="table table-condensed table-hover">
+      <thead>
+
+      <tr>
+        <th>S.N.</th>
+        <th>Name</th>
+        <th>Print_name</th>
+        <th>Edit/Delete</th>
+      </tr>
+      </thead>
+
+      <% @unit.each_with_index do |unit,i| %>
+
+          <tbody>
+          <tr>
+            <td><%= (@page.to_i - 1) *4+i+1 %></td>
+            <td> <%= unit.name %></td>
+            <td> <%= unit.print_name%></td>
+            <td>
+              <a href="<%= edit_unit_path(unit)%>" data-toggle="tooltip" title="EDIT"><i class="fa fa-eye fa-lg" aria-hidden="true"> </i></a>
+              &nbsp <a data-method="delete" href="<%= unit_path(unit)%>" data-confirm="Files will be permanently deleted?" data-toggle="tooltip" title="DELETE"><i class="fa fa-trash fa-lg" aria-hidden="true"> </i></a>
+            </td>
+          </tr>
+          </tbody>
+
+      <% end %>
+    </table>
+  </div>
+  <%= will_paginate @unit, renderer: BootstrapPagination::Rails %>
+</div>

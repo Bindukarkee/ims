@@ -1,0 +1,28 @@
+<div class="container">
+
+    <ol class="breadcrumb">
+      <li><a href="/">Home</a></li>
+      <li><a href="/company_profiles">Company Profiles</a></li>
+      <li class="active">Show</li>
+    </ol>
+
+  <br>
+  <div class="wells">
+
+    <div class="logo">
+      <p> <a href="<%= @company_profile.logo.url %>" target="_blank">
+      <%= image_tag @company_profile.logo.thumb.url, :class => "aa thumbnail" %></a> </p>
+    </div>
+
+    <p> <strong> Name: </strong> <%= @company_profile.name %> </p>
+    <p> <strong> Address:</strong> <%= @company_profile.address %> </p>
+    <p> <strong> VDC/MUN: </strong> <%= @company_profile.vdc_mun %> </p>
+    <p> <strong> Ward No: </strong> <%= @company_profile.ward_no %> </p>
+    <p> <strong> Phone No: </strong> <%= @company_profile.phone_no%> </p>
+    <p> <strong> VAT PAN No: </strong> <%= @company_profile.vat_pan_no %> </p>
+    <p> <strong> District: </strong> <%= @company_profile.district %> </p>
+    <p> <strong> Zone:</strong> <%= @company_profile.zone %> </p>
+    <p> <strong> Current Fiscal Year:</strong> <%= @company_profile.fiscal_year_id %> </p>
+
+    </div>
+</div>

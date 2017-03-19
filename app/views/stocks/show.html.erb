@@ -1,0 +1,25 @@
+<div class="container">
+
+
+  <br>
+
+  <ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li><a href="/stocks">Stocks</a></li>
+    <li class="active">Edit</li>
+  </ol>
+
+  <div class="wells">
+
+    <p> <b> Item ID: </b> <%= @stock.item_id %> </p>
+    <p> <b> Quantity: </b> <%= @stock.quantity %> </p>
+    <p> <b> Unit Price: </b> <%= @stock.unit_price %> </p>
+    <p> <b> Estimate Sell Price: </b> <%= @stock.est_sell_price %> </p>
+
+
+<p>
+  <a href="/stocks/new" class="btn btn-success">NEW STOCK</a>
+
+  </p>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+<div class="container">
+
+<br>
+
+<ol class="breadcrumb">
+  <li><a href="/">Home</a></li>
+  <li><a href="/units">Units</a></li>
+  <li class="active">Edit</li>
+</ol>
+
+  <%= render "form" %>
+
+  <% if @unit.errors.any? %>
+      <div class="welle">
+        <h2>
+          <%= pluralize(@unit.errors.count,"error")  %>
+          occured
+        </h2>
+        <ul>
+          <%= @unit.errors.full_messages.each do |e| %>
+              <li> <%= e %>
+              </li>
+          <% end %>
+        </ul>
+      </div>
+  <% end %>
+</div>
+
+
+
+

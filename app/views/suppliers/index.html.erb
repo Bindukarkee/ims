@@ -1,0 +1,40 @@
+<div class="container">
+
+  <div class="page-header">
+    <b>SUPPLIERS</b>
+  </div>
+
+  <p><a href="/suppliers/new" class="btn btn-success">ADD NEW</a>
+  </p>
+
+
+  <div class="table-responsive">
+    <table  class="table table-condensed table-hover">
+
+      <tr>
+        <th>S.N.</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Phone No</th>
+        <th>Email</th>
+        <th>Edit/Delete</th>
+      </tr>
+
+      <% @supplier.each_with_index do |supplier,i| %>
+          <tr>
+            <td><%= (@page.to_i - 1) *4+i+1 %></td>
+            <td> <%= supplier.name %></td>
+            <td> <%= supplier.address %></td>
+            <td> <%= supplier.phone_no %></td>
+            <td> <%= supplier.email %></td>
+            <td>
+              <a href="<%= edit_supplier_path(supplier)%>" data-toggle="tooltip" title="EDIT"><i class="fa fa-eye fa-lg" aria-hidden="true"> </i></a>
+              &nbsp <a data-method="delete" href="<%= supplier_path(supplier)%>" data-confirm="Files will be permanently deleted?" data-toggle="tooltip" title="DELETE"><i class="fa fa-trash fa-lg" aria-hidden="true"> </i></a>
+            </td>
+          </tr>
+
+      <% end %>
+    </table>
+  </div>
+  <%= will_paginate @supplier, renderer: BootstrapPagination::Rails %>
+</div>

@@ -1,0 +1,29 @@
+<div class="container">
+
+  <br>
+
+  <ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li><a href="/customers">Customers</a></li>
+    <li class="active">Edit</li>
+  </ol>
+
+  <%= render "form" %>
+
+  <% if @customer.errors.any? %>
+      <div class="welle">
+      <h2>
+        <%= pluralize(@customer.errors.count,"error")  %>
+        occured
+      </h2>
+      <ul>
+        <%= @customer.errors.full_messages.each do |e| %>
+            <li> <%= e %>
+            </li>
+        <% end %>
+      </ul>
+        </div>
+  <% end %>
+</div>
+
+

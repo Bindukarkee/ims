@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Project</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'jquery-1.4.2.min.js' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  </head>
+
+  <body>
+
+         <% if user_signed_in? %>
+  <div class="container-fluid">
+
+     <nav class="navbar navbar-default navbar-fixed-top">
+        <ul class="nav navbar-nav">
+
+          <li style="float: left"><a href="/">
+            <i class="fa fa-2x fa-home" aria-hidden="true"></i>
+            </a></li>
+
+          <li>
+            <a href="/customers">CUSTOMER</a>
+          </li>
+
+          <li>
+            <a href="/suppliers">SUPPLIER</a>
+          </li>
+
+          <li>
+            <a href="/stocks">STOCKS</a>
+          </li>
+
+          <li>
+            <a href="/items">ITEM</a>
+          </li>
+
+          <li>
+            <a href="/item_groups">ITEM GROUPS</a>
+          </li>
+
+          <li>
+            <a href="/units">UNIT</a>
+          </li>
+
+          <li>
+            <a href="/sales">SALE</a>
+          </li>
+
+          <li>
+            <a href="/fiscal_years">FISCAL YEAR</a>
+          </li>
+
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">SETTINGS
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li> <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> </li>
+              <li> <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %> </li>
+              <li><a href="/company_profiles">Company Profile</a> </li>
+              <li><a href="/homes">User Profile</a> </li>
+            </ul>
+          </li>
+          <li>
+            <a href="/logs">LOG</a>
+          </li>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+
+          <li><strong> <%= current_user.email %></strong>
+          </li>
+
+        </ul>
+      </nav>
+      <br>
+      <br>
+      <br>
+
+  <% else %>
+
+      <button type="button" class="btn btn-default navbar-btn">
+        <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+      </button>
+
+    <% end %>
+
+
+
+
+
+</div>
+
+    <%= yield %>
+
+
+  </body>
+</html>

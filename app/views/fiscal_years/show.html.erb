@@ -1,0 +1,23 @@
+<div class="container">
+
+    <ol class="breadcrumb">
+      <li><a href="/">Home</a></li>
+      <li><a href="/fiscal_years">Fiscal Years</a></li>
+      <li class="active">Show</li>
+    </ol>
+
+
+    <div class="wells">
+
+    <p> <b> Name: </b> <%= @fiscal_year.name %> </p>
+    <p> <b> Start Date: </b> <%= @fiscal_year.start_date %> </p>
+    <p> <b> End Date: </b> <%= @fiscal_year.end_date %> </p>
+   
+
+
+<p>
+  <a href="/fiscal_years/new" class="btn btn-success">New</a>
+
+  </p>
+    </div>
+</div>

@@ -1,0 +1,44 @@
+
+    <div class="container">
+      <br>
+
+<br>
+      <div class="row">
+        <div class="col-md-offset-2 col-md-6">
+          <div class="well well1">
+
+            <%= form_for @unit do |f| %>
+    <form>
+
+        <div class="form-group">
+          <div class="row">
+            <div class="col-sm-3">
+              <label>Name</label></div>
+            <div class="col-md-8">
+              <%= f.text_field :name, {class: "form-control"} %>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="row">
+            <div class="col-sm-3">
+              <label>Print Name</label></div>
+            <div class="col-md-8">
+              <%= f.text_field :print_name, {class: "form-control"}%>
+            </div>
+          </div>
+        </div>
+
+
+
+       <p> <button type="submit" class="btn btn-primary">SAVE</button>
+      </p>
+
+
+    </form>
+<% end %>
+            </div>
+          </div>
+        </div>
+      </div>
