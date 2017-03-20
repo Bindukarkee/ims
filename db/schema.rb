@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170309085720) do
+ActiveRecord::Schema.define(version: 20170320072939) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -85,14 +85,37 @@ ActiveRecord::Schema.define(version: 20170309085720) do
     t.datetime "updated_at",  null: false
   end
 
+  create_table "purchase_items", force: :cascade do |t|
+    t.integer  "purchase_id"
+    t.integer  "item_id"
+    t.integer  "quantity"
+    t.decimal  "unit_price"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
   create_table "purchases", force: :cascade do |t|
-    t.string   "item_id"
-    t.string   "unit_cost_price"
-    t.string   "quantity"
-    t.string   "cash_credit"
-    t.string   "supplier_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.date     "date"
+    t.integer  "item_id"
+    t.decimal  "unit_price"
+    t.integer  "quantity"
+    t.decimal  "cash_credit"
+    t.integer  "supplier_id"
+    t.integer  "total"
+    t.integer  "bill_no"
+    t.integer  "discount"
+    t.date     "fiscal_year"
+  end
+
+  create_table "sale_items", force: :cascade do |t|
+    t.integer  "sale_id"
+    t.integer  "item_id"
+    t.integer  "quantity"
+    t.decimal  "unit_price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "sales", force: :cascade do |t|
@@ -107,12 +130,12 @@ ActiveRecord::Schema.define(version: 20170309085720) do
   end
 
   create_table "stocks", force: :cascade do |t|
-    t.string   "item_id"
-    t.string   "quantity"
-    t.string   "unit_price"
-    t.string   "est_sell_price"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.decimal  "unit_price"
+    t.integer  "item_id"
+    t.integer  "quantity"
+    t.integer  "est_sell_price"
   end
 
   create_table "suppliers", force: :cascade do |t|

@@ -1,0 +1,24 @@
+<div class="container">
+
+  <br>
+  <ol class="breadcrumb">
+    <li><a href="/"> Home </a></li>
+    <li><a href="/purchases"> Purchases </a></li>
+    <li class="active"> Show </li>
+  </ol>
+  <br>
+  <div class="wells">
+
+    <p> <strong> Bill Number       </strong> <%= @purchses.bill_no %> </p>
+    <p> <strong> Supplier:    </strong> <%= @purchase.supplier %> </p>
+    <p> <strong> Total Cost:   </strong> <%= @purchase.total %> </p>
+    <p> <strong> Net Discount: </strong> <%= @purchase.discount %> </p>
+    <p> <strong> Date: </strong> <%= @purchase.date %> </p>
+    <p> <strong> Fiscal_Year: </strong> <%= @purchase.fiscal_year.name %></p>
+
+
+    <p>
+      <a href="/purchases/new" class="btn btn-success">New</a>
+    </p>
+  </div>
+</div>

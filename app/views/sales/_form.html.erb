@@ -71,6 +71,7 @@
 
                 <tbody>
                 <tr>
+
                   <td>1</td>
                   <td>
                   <div class="ui-widget">
@@ -83,9 +84,15 @@
                   </td>
                   <td><%= f.text_field :cash_credit, {class: "form-control"} %>
                   </td>
-                  <td><i class="fa fa-plus">  </i>
 
-                          </tr>
+                  <%= f.fields_for :fields do |builder| %>
+                      <%= render 'field_fields', f: builder %>
+                      <% end %>
+
+                  <td> <%= link_to_add_fields  "Add Fields", f, :fields %>
+                </td>
+
+                </tr>
                 </tbody>
                 </table>
 

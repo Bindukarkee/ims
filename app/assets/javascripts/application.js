@@ -13,6 +13,8 @@
 //= require jquery
 //= require jquery-ui
 //= require jquery_ujs
+//= require select2
+//= require select2.min
 //= require turbolinks
 //= require bootstrap-datepicker
 //= require_tree .
@@ -23,3 +25,4 @@
    //     source: $('#sale_item_name').data('autocomplete-source')
     //})
 //});
+
